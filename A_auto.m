@@ -1,13 +1,19 @@
-%清空变量，读取图像  
-clear;close all
-src = imread('D:\课题组\图像处理\2.png');
+%% 参考学长的例子看一下能不能够自动化完成
+clc;
+clear;
+close all;
 
-%显示原图像
-subplot(2,2,1),imshow(src),title('原图像')
+% read image
+src = imread('official.jpg');
 
-%用ostu方法获取二值化阈值，进行二值化并进行显示
-level=graythresh(src);
-bw=im2bw(src,level);
+% show original image
+subplot(221);
+imshow(src);
+title('原始图像');
+
+% 用ostu方法获取二值化阈值，进行二值化并进行显示
+level = graythresh(src);
+bw = im2bw(src,level);
 
 %运用开操作消去噪点
 se = strel('disk',1);
@@ -26,4 +32,3 @@ hold on
 plot(C.Location(:,1), C.Location(:,2), 'r*');
 
 hold off
-

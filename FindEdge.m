@@ -1,6 +1,6 @@
  %清空变量，读取图像  
 clear;close all  
-src = imread('C:\Users\dell123\Documents\MATLAB\图像处理\antenna.jpg');  
+src = imread('D:\课题组\图像处理\ant-process\3.png');  
   
 figure('name','原始图像'),  
 imshow(src),title('src'),  
